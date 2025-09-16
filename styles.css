@@ -1,0 +1,110 @@
+:root {
+  --player-bg: #222;
+  --control-bg: #333;
+  --accent: #ff6b6b;
+  --text: #fff;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg,#1f1f1f,#121212);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.player {
+  max-width: 800px;
+  width: 90%;
+  background: var(--player-bg);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+
+video {
+  width: 100%;
+  display: block;
+  background: black;
+  cursor: pointer;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 12px;
+  background: var(--control-bg);
+}
+
+.progress {
+  position: relative;
+  height: 10px;
+  background: #555;
+  border-radius: 6px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.progress__filled {
+  width: 0%;
+  background: var(--accent);
+  height: 100%;
+  transform-origin: left center;
+  transition: width 0.08s linear;
+}
+
+.control-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.player__button {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  user-select: none;
+}
+
+.player__button:hover {
+  background: rgba(255,255,255,0.03);
+}
+
+.slider {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 6px;
+  border-radius: 6px;
+  background: #666;
+  outline: none;
+  cursor: pointer;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 2px solid rgba(255,255,255,0.9);
+}
+
+.label {
+  font-size: 13px;
+  color: #ddd;
+}
+
+.spacer { flex: 1; }
+
+@media (max-width:520px) {
+  .player__button { padding: 6px 10px; font-size: 14px; }
+}
