@@ -7,39 +7,41 @@
 </head>
 <body>
   <div class="player" id="player">
-    <!-- Video element (click toggles play/pause) -->
-    <video id="video" src="https://www.w3schools.com/html/mov_bbb.mp4" preload="metadata"></video>
+    <!-- Video element -->
+    <!-- CHANGED: added class="player__video viewer" -->
+    <video class="player__video viewer" src="https://www.w3schools.com/html/mov_bbb.mp4" preload="metadata"></video>
 
-    <!-- Controls -->
     <div class="controls">
-      <!-- Progress bar -->
-      <div class="progress" id="progress">
-        <div class="progress__filled" id="progressFilled" style="width:0%"></div>
+      <div class="progress">
+        <div class="progress__filled"></div>
       </div>
 
-      <!-- Row of controls -->
       <div class="control-row">
         <!-- Play / Pause -->
-        <button class="player__button" id="toggle" title="Play/Pause">►</button>
+        <!-- CHANGED: added class="player__button toggle" -->
+        <button class="player__button toggle" title="Play/Pause">►</button>
 
         <!-- Skip back 10s -->
-        <button class="player__button" data-skip="-10" id="skipBack">« 10s</button>
+        <!-- CHANGED: added class="player__button rewind" -->
+        <button class="player__button rewind" data-skip="-10">« 10s</button>
 
         <!-- Skip forward 25s -->
-        <button class="player__button" data-skip="25" id="skipFwd">25s »</button>
+        <!-- CHANGED: added class="player__button forward" -->
+        <button class="player__button forward" data-skip="25">25s »</button>
 
         <!-- Volume -->
         <label class="label" for="volume">Volume</label>
-        <input class="slider" id="volume" type="range" min="0" max="1" step="0.01" value="1" style="width:110px">
+        <!-- CHANGED: use class="player__slider" -->
+        <input class="player__slider" name="volume" type="range" min="0" max="1" step="0.01" value="1" style="width:110px">
 
         <!-- Playback speed -->
         <label class="label" for="playbackRate">Speed</label>
-        <input class="slider" id="playbackRate" type="range" min="0.25" max="2" step="0.05" value="1" style="width:120px">
+        <!-- CHANGED: use class="player__slider" -->
+        <input class="player__slider" name="playbackRate" type="range" min="0.25" max="2" step="0.05" value="1" style="width:120px">
 
         <div class="spacer"></div>
 
-        <!-- Time display -->
-        <div class="label" id="timeDisplay">00:00 / 00:00</div>
+        <div class="label time-display">00:00 / 00:00</div>
       </div>
     </div>
   </div>
